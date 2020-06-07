@@ -10,25 +10,14 @@ using System.Windows.Forms;
 
 namespace AutoSclad.MasterSclad
 {
-    public partial class AddTovarToSclad : Form
+    public partial class EditMarka : Form
     {
-        public AddTovarToSclad()
+        public EditMarka()
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
         Point lastPoint;
-
-        private void AddTovarToSclad_MouseMove(object sender, MouseEventArgs e)
+        private void EditMarka_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left) //Если пользователь зажал левой кнопкой по окну, то он может передвигать окно.
             {
@@ -37,15 +26,14 @@ namespace AutoSclad.MasterSclad
             }
         }
 
-        private void AddTovarToSclad_MouseDown(object sender, MouseEventArgs e)
+        private void EditMarka_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);    //Закрепляет позицию после перемещения
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void CloseEditMarakForm_Click(object sender, EventArgs e)
         {
-            AddPostovhick addPostovhickOpenForm = new AddPostovhick();
-            addPostovhickOpenForm.ShowDialog();
+            this.Close();
         }
     }
 }

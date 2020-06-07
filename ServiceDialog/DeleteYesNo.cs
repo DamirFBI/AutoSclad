@@ -10,19 +10,15 @@ using System.Windows.Forms;
 
 namespace AutoSclad.ServiceDialog
 {
-    public partial class ExitGoLogin : Form
+    public partial class DeleteYesNo : Form
     {
-        public ExitGoLogin()
+        public DeleteYesNo()
         {
             InitializeComponent();
         }
         Point lastPoint;
-        private void ExitGoLogin_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);    //Закрепляет позицию после перемещения
-        }
 
-        private void ExitGoLogin_MouseMove(object sender, MouseEventArgs e)
+        private void DeleteYesNo_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left) //Если пользователь зажал левой кнопкой по окну, то он может передвигать окно.
             {
@@ -31,22 +27,18 @@ namespace AutoSclad.ServiceDialog
             }
         }
 
-        private void YesExit_MouseClick(object sender, MouseEventArgs e)
+        private void DeleteYesNo_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);    //Закрепляет позицию после перемещения
+        }
+
+        private void NoDeleteButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            loginform loginformOpenForm = new loginform();
-            loginformOpenForm.Show();
         }
 
-        private void NoExit_MouseClick(object sender, MouseEventArgs e)
+        public void YesDeleteButton_Click(object sender, EventArgs e)
         {
-            this.Close();
         }
-
-        private void ExitProgramm_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
     }
 }

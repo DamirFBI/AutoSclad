@@ -7,28 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace AutoSclad.MasterSclad
 {
-    public partial class AddTovarToSclad : Form
+    public partial class CreatedModel : Form
     {
-        public AddTovarToSclad()
+        public CreatedModel()
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
         Point lastPoint;
-
-        private void AddTovarToSclad_MouseMove(object sender, MouseEventArgs e)
+        private void CreatedModel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left) //Если пользователь зажал левой кнопкой по окну, то он может передвигать окно.
             {
@@ -37,15 +27,20 @@ namespace AutoSclad.MasterSclad
             }
         }
 
-        private void AddTovarToSclad_MouseDown(object sender, MouseEventArgs e)
+        private void CreatedModel_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);    //Закрепляет позицию после перемещения
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void AddModel_Click(object sender, EventArgs e)
         {
-            AddPostovhick addPostovhickOpenForm = new AddPostovhick();
-            addPostovhickOpenForm.ShowDialog();
+
+        }
+
+        private void EditModel_Click(object sender, EventArgs e)
+        {
+            EditModel EditModelOpenForm = new EditModel();
+            EditModelOpenForm.ShowDialog();
         }
     }
 }
